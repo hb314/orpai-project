@@ -65,12 +65,12 @@ return (uagent.search("android") > -1)
 // --- 新增 App Scheme 變數 ---
 // 請務必將 'your-ios-app-scheme://' 和 'your-android-app-scheme://' 替換為您實際的 App Scheme。
 // 例如：如果您的 App Scheme 是 'fubonemeg://'，則替換為 'fubonemeg://'。
-var iOSAppScheme = "your-ios-app-scheme://"; // **請替換為您實際的 iOS App Scheme**
-var androidAppScheme = "your-android-app-scheme://"; // **請替換為您實際的 Android App Scheme**
+var iOSAppScheme = "fap-aipro://"; // **請替換為您實際的 iOS App Scheme**
+var androidAppScheme = "fap-aipro://"; // **請替換為您實際的 Android App Scheme**
 
 // App Store 和 Google Play 連結
-var iOSLink = "https://itunes.apple.com/tw/app/fu-bang-zheng-quan-fu-bange/id363720354?mt=8";
-var androidLink = "https://play.google.com/store/apps/details?id=com.fbs&hl=zh_TW";
+var iOSLink = "https://apps.apple.com/tw/app/google-notebooklm/id6737527615";
+var androidLink = "https://play.google.com/store/search?q=notelm&c=apps&hl=zh_TW";
 
 // --- 新增嘗試開啟 App Scheme 並回退到 App Store 的函數 ---
 function tryDeepLink(appScheme, fallbackUrl) {
