@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html style="height: 100%;">
 <head>
 <meta charset="UTF-8">
@@ -11,16 +11,16 @@
 <meta content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" name="viewport">
 
 <meta http-equiv="X-cUA-Compatible" content="IE=edge">
-<meta property="og:site_name" content="富邦e點通 - 下載頁面" />
-<meta property="og:title" content="富邦e點通 - 下載頁面" />
-<meta name="keywords" content="富邦,富邦e點通,交易系統,手機下單,mobile,下載,download,apk,QR code,QR,android,iphone,ipad,ios,google play,play store,app store,apps,app">
+<meta property="og:site_name" content="富邦 AI PRO - 下載頁面" />
+<meta property="og:title" content="富邦 AI PRO - 下載頁面" />
+<meta name="keywords" content="富邦,富邦 AI PRO,交易系統,手機下單,mobile,下載,download,apk,QR code,QR,android,iphone,ipad,ios,google play,play store,app store,apps,app">
 
 
 <link rel="icon" 
 type="image/ico" 
 href="/favicon.ico">
 
-<title>富邦e點通</title>
+<title>富邦 AI PRO</title>
 
 </head>
 <body>
@@ -35,12 +35,14 @@ ga('send', 'pageview');
 </script>
 
 
-<div id="android"></div>
+
 <script type="text/javascript"><!--
 var deviceIphone = "iphone";
 var deviceIpod = "ipod";
 var deviceIpad = "ipad";
 var deviceAndroid = "android";
+var iOSLink = "https://apps.apple.com/tw/app/%E5%AF%8C%E9%82%A6%E8%AD%89%E5%88%B8-%E5%AF%8C%E9%82%A6e%E9%BB%9E%E9%80%9A/id363720354";
+var androidLink = "https://play.google.com/store/apps/details?id=com.fbs&hl=zh_TW"; // Android App Store 連結
 
 //Initialize our user agent string to lower case.
 var uagent = navigator.userAgent.toLowerCase();
@@ -63,14 +65,8 @@ return (uagent.search("android") > -1)
 }
 
 // --- 新增 App Scheme 變數 ---
-// 請務必將 'your-ios-app-scheme://' 和 'your-android-app-scheme://' 替換為您實際的 App Scheme。
-// 例如：如果您的 App Scheme 是 'fubonemeg://'，則替換為 'fubonemeg://'。
-var iOSAppScheme = "fap-aipro://"; // **請替換為您實際的 iOS App Scheme**
-var androidAppScheme = "fap-aipro://"; // **請替換為您實際的 Android App Scheme**
-
-// App Store 和 Google Play 連結
-var iOSLink = "https://apps.apple.com/tw/app/google-notebooklm/id6737527615";
-var androidLink = "https://play.google.com/store/search?q=notelm&c=apps&hl=zh_TW";
+var iOSAppScheme = "touchstockfbs://"; // **請替換為您實際的 iOS App Scheme (例如: myapp://)**
+var androidAppScheme = "touchstockfbs://"; // **請替換為您實際的 Android App Scheme (例如: myapp://)**
 
 // --- 新增嘗試開啟 App Scheme 並回退到 App Store 的函數 ---
 function tryDeepLink(appScheme, fallbackUrl) {
@@ -90,7 +86,7 @@ function tryDeepLink(appScheme, fallbackUrl) {
 
 if (DetectIphone() || DetectIpod() || DetectIpad()){
 ga('send', 'event', 'redirect-ios', 'redirect');
-tryDeepLink(iOSAppScheme, iOSLink);
+window.location.replace(iOSLink); // 直接導向 App Store，避免 Safari 錯誤提示
 }
 else if(DetectAndroid()){
 ga('send', 'event', 'redirect-google-play', 'redirect');
@@ -98,7 +94,7 @@ tryDeepLink(androidAppScheme, androidLink);
 }
 else{
 ga('send', 'event', 'redirect-desktop', 'redirect');
-window.location.href = "https://www.fbs.com.tw/MobileMessage/index";
+window.location.href = "https://www.fbs.com.tw/MobileMessage/Index";
 }
 --></script>
 
