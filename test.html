@@ -41,8 +41,8 @@ var deviceIphone = "iphone";
 var deviceIpod = "ipod";
 var deviceIpad = "ipad";
 var deviceAndroid = "android";
-var iOSLink = "https://apps.apple.com/tw/app/%E5%AF%8C%E9%82%A6%E8%AD%89%E5%88%B8-%E5%AF%8C%E9%82%A6e%E9%BB%9E%E9%80%9A/id363720354";
-var androidLink = "https://play.google.com/store/apps/details?id=com.fbs&hl=zh_TW"; // Android App Store 連結
+var iOSLink = "https://apps.apple.com/tw/app/id6751573234";
+var androidLink = "https://play.google.com/store/apps/details?id=com.fubon.securities.fubonaipro&hl=zh_TW"; // Android App Store 連結
 
 //Initialize our user agent string to lower case.
 var uagent = navigator.userAgent.toLowerCase();
@@ -65,8 +65,8 @@ return (uagent.search("android") > -1)
 }
 
 // --- 新增 App Scheme 變數 ---
-var iOSAppScheme = "touchstockfbs://"; // **請替換為您實際的 iOS App Scheme (例如: myapp://)**
-var androidAppScheme = "touchstockfbs://"; // **請替換為您實際的 Android App Scheme (例如: myapp://)**
+var iOSAppScheme = "fap-aipro://"; // **請替換為您實際的 iOS App Scheme (例如: myapp://)**
+var androidAppScheme = "fap-aipro://"; // **請替換為您實際的 Android App Scheme (例如: myapp://)**
 
 // --- 新增嘗試開啟 App Scheme 並回退到 App Store 的函數 ---
 function tryDeepLink(appScheme, fallbackUrl) {
@@ -86,8 +86,8 @@ function tryDeepLink(appScheme, fallbackUrl) {
 
 if (DetectIphone() || DetectIpod() || DetectIpad()){
 ga('send', 'event', 'redirect-ios', 'redirect');
-window.location.replace(iOSLink); // 直接導向 App Store，避免 Safari 錯誤提示
-}
+tryDeepLink(iOSAppScheme, iOSLink);
+}// 嘗試開啟 App，若失敗則導向 App Store
 else if(DetectAndroid()){
 ga('send', 'event', 'redirect-google-play', 'redirect');
 tryDeepLink(androidAppScheme, androidLink);
