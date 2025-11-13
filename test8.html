@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html style="height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache,no-store">
+    <meta http-equiv="cache-control" content="no-cache,no-store">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta http-equiv="X-cUA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="富邦 AI PRO - 下載頁面" />
+    <meta property="og:title" content="富邦 AI PRO - 下載頁面" />
+    <meta name="keywords"
+        content="富邦,富邦 AI PRO,交易系統,手機下單,mobile,下載,download,apk,QR code,QR,android,iphone,ipad,ios,google play,play store,app store,apps,app">
+    <link rel="icon" type="image/ico" href="/favicon.ico">
+    <title>富邦 AI PRO</title>
+</head>
+
+<body>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZ1YFBEW6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DSZ1YFBEW6');
+    </script>
+
+<script type="text/javascript"><!--
+
+var deviceIphone = "iphone";
+var deviceIpod = "ipod";
+var deviceIpad = "ipad";
+var deviceAndroid = "android";
+var iOSLink = "https://apps.apple.com/tw/app/id6751573234"; // iOS 應用程式商店連結
+var androidLink = "https://play.google.com/store/apps/details?id=com.fubon.aibank&hl=zh_TW"; // Android 應用程式商店連結
+
+// 將我們的使用者代理 (user agent) 字串初始化為小寫。
+var uagent = navigator.userAgent.toLowerCase();
+// 偵測目前裝置是否為 iPhone。
+function DetectIphone() {
+return (uagent.search(deviceIphone) > -1)
+}
+// 偵測目前裝置是否為 iPad。
+function DetectIpad() {
+// iPadOS 13+ 會將裝置回報為 Mac，所以我們需要一個更可靠的檢查方式。
+// 雖然平台是 Mac，但它同時也具備觸控功能。
+return (uagent.search(deviceIpad) > -1) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+}
+
+// 偵測目前裝置是否為 iPod Touch。
+function DetectIpod() {
+return (uagent.search(deviceIpod) > -1)
+}
+
+function DetectAndroid() {
+return (uagent.search("android") > -1)
+}
+
+if (DetectIphone() || DetectIpod() || DetectIpad()){
+gtag('event', 'redirect', {
+  'device_type': 'ios'
+});
+window.location.href = iOSLink; // 直接導向 App Store
+}
+else if(DetectAndroid()){
+gtag('event', 'redirect', {
+  'device_type': 'android'
+});
+window.location.href = androidLink; // 直接導向 Google Play
+}
+else{
+gtag('event', 'redirect', {
+  'device_type': 'desktop'
+});
+window.location.href = "https://www.fubon.com/securities/aipro/index.html"; // 導向桌面網站
+}
+-->
+</script>
+</body>
+</html>
